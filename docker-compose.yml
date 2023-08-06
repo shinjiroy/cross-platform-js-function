@@ -1,0 +1,32 @@
+version: "3"
+services:
+  # jsビルドする用
+  staticbuilder:
+    image: node:20.5.0-bullseye
+    volumes:
+      - .:/app
+    working_dir: /app
+    profiles:
+      - staticbuilder
+  # サーバーサイドでJSを実行するコンテナ
+  jsfunction:
+    build:
+      context: .
+      dockerfile: ./docker/jsfunction/Dockerfile
+    volumes:
+      - ./resources/js/cross:/app/cross
+      - ./resources/js/functions:/app/functions
+      - ./package.json:/app/package.json
+    ports:
+      - "80"
+  # アプリケーション本体が載る想定のコンテナ
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    ports:
+      - ${APP_PORT}:80
+    volumes:
+      - .:/var/www
+      - ./docker/app/virtual.conf:/etc/apache2/sites-available/000-default.conf
+    working_dir: /var/www
