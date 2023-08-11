@@ -24,7 +24,10 @@ class JsFunction
                 CURLOPT_HEADER => false,
                 CURLOPT_POST => true,
                 CURLOPT_POSTFIELDS => json_encode($param, JSON_UNESCAPED_SLASHES),
-                CURLOPT_RETURNTRANSFER => true
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_HTTPHEADER => [
+                    'Content-Type: application/json',
+                ],
             ]);
 
             $responseStr = curl_exec($ch);

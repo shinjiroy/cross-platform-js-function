@@ -10,5 +10,8 @@ const argObjCalc = {
  * @returns 
  */
 export const calc = (argObj) => {
+    if (argObj.kusoDekaString) {
+        console.log(argObj.kusoDekaString.length); // 通信が発生することによるオーバーヘッドの確認用
+    }
     return argObj.val1 + argObj.val2;
 };
