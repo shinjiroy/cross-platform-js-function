@@ -17,7 +17,7 @@ try {
     $time_start = microtime(true);
     // jsfunctionコンテナでやってる処理と同じ処理をする
     // jsfunctionコンテナではkusoDekaStringの長さを測る処理と、val1+val2の計算をしている。
-    $result = ($_GET['val1'] ?? 0) + ($_GET['val2'] ?? 0);
+    ($_GET['val1'] ?? 0) + ($_GET['val2'] ?? 0);
     $param->lengthKusoDekaString();
     $timePHP = microtime(true) - $time_start;
     error_log($timePHP . 'sec for calc by PHP');

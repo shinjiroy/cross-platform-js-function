@@ -12,7 +12,9 @@ class CalcParamModel implements JsonSerializable {
     public function __construct(int $val1, int $val2) {
         $this->val1 = $val1;
         $this->val2 = $val2;
-        $this->kusoDekaString = bin2hex(random_bytes(100000)); // オーバーヘッドの確認のため、クソデカリクエストデータにする
+        // 通信時のオーバーヘッドの確認のため、リクエストデータのサイズを大きくしてみる
+        // ただし、100000とかにするとexpressがエラーを吐く
+        $this->kusoDekaString = bin2hex(random_bytes(50000));
     }
 
     public function jsonSerialize(): array

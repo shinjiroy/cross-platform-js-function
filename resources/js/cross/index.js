@@ -10,10 +10,9 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
-// 
 app.post('/calc', (req, res) => {
   const result =  calc(req.body);
-  res.send(result);
+  res.send('' + result); // 文字列で返す
 });
 
 const port = 80;
