@@ -1,0 +1,9 @@
+{
+    "name": "shinjiroy/cross-platform-js-function",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
