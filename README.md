@@ -9,7 +9,7 @@ JSのコードを書き、ブラウザで実行するためのJSファイルを�
 
 ## 構成
 
-![構成図]()
+![構成図](https://raw.githubusercontent.com/shinjiroy/cross-platform-js-function/main/diag.drawio.svg)
 
 ## ビルド手順
 
