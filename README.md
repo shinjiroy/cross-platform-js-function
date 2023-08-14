@@ -15,6 +15,6 @@ JSのコードを書き、ブラウザで実行するためのJSファイルを�
 
 1. `.env` をRootに作って `APP_PORT=~~` とか書いておく
 2. `docker-compose run --rm staticbuilder npm install`
-3. `docker-compose run --rm staticbuilder npm webpack --config webpack.config.js` でブラウザ用のJSをビルド
+3. `docker-compose run --rm staticbuilder npx webpack --config webpack.config.js` でブラウザ用のJSをビルド
 4. `docker-compose up -d` で各コンテナを起動
 5. `http://localhost/?val1=1&val2=5` 等にリクエスト
